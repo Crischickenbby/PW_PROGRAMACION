@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1b0536;
+    height: 100vh;
+    overflow-x: hidden; /* Evitar desplazamiento horizontal */
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px; /* Ajusta la altura según tus necesidades */
+    background: url('../img/Gaxia.jpg') no-repeat center center; /* Añade la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el área */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*border-bottom: 5px solid #ffffff; Ajusta el color y el grosor del borde según tus necesidades */
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px; /* Ajusta la altura del degradado según tus necesidades */
+    background: linear-gradient(to top, #1b0536, transparent);
+}
+
+/*APARTADO DEL LOGO Y TITULO DE LA PAGINA, NO MOVER*/
+header a {
+    font-size: 26px; /* Cambiar el tamaño del texto según tu preferencia */
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column; /* Colocar imagen encima del enlace */
+    align-items: center; /* Centrar elementos */
+    text-decoration: none;
+    color: #ffffff; /* Color de texto blanco */
+}
+
+.huevo_lentes {
+    margin-top: -100px;
+    height: 150px;
+    animation: levitate 2s ease-in-out infinite;/*ANIMACIÓN PARA QUE LEVITE EL HUEVO*/
+}
+
+@keyframes levitate {
+    0% {
+        transform: translateY(0); /* Empieza en su posición original */
+    }
+    50% {
+        transform: translateY(-3px); /* Sube 20px en la mitad de la animación */
+    }
+    100% {
+        transform: translateY(0); /* Vuelve a su posición original */
+    }
+}
+
+.neon {
+    animation: levitate 2s ease-in-out infinite; /*ANIMACIÓN PARA QUE LEVITE EL TEXTO*/
+    margin-top: -20px; /* Espacio entre la imagen y el texto */
+    color: #ffffff;
+        text-shadow:
+        0 0 5px rgba(150, 0, 255, 1),
+        0 0 5px rgba(150, 0, 255, 1),
+        0 0 5px rgba(150, 0, 255, 1),
+        0 0 5px rgba(100, 0, 178, 1),
+        0 0 5px rgba(100, 0, 178, 1),
+        0 0 5px rgba(100, 0, 178, 1),
+        0 0 5px rgba(100, 0, 178, 1),
+        0 0 5px rgba(100, 0, 178, 1),
+        0 0 5px rgba(100, 0, 178, 1);
+}
+/*FIN DEL APARTADO DEL LOGO Y TITULO DE LA PAGINA, NO MOVER*/
+/*APARTADO DE LA CARD*/
+.card {
+    --background: linear-gradient(to left, #ffb300 0%, #501515 100%);
+    width: 190px;
+    height: 254px;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+   }
+   
+   .card::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #ffc400;
+    background: var(--background);
+    transition: opacity .5s;
+   }
+   
+   .card-info {
+    --color: #351569;
+    background: var(--color);
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    border-radius: .7rem;
+   }
+   
+   .card .title {
+    font-weight: bold;
+    letter-spacing: .1em;
+   }
+   
+   /*Hover*/
+   .card:hover::after {
+    opacity: 0;
+   }
+   
+   .card:hover .card-info {
+    color: #f7ba2b;
+    transition: color 1s;
+   }
+   /*FIN DEL APARTADO DE LA CARD*/
+   
